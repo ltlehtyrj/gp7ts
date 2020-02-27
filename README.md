@@ -1,6 +1,6 @@
 # Guitar Pro 7 Time Signature Changer
 
-The script updates the current measure's time signature in Guitar Pro 7, by pressing the grave accent key (\`).
+The script updates the current measure's time signature in Guitar Pro 7, by pressing the grave accent key (\`).<br>
 To get it work, save the point, the colon and all digits from 0 to 9 in PNG (see examples), then set the variables:
 
 X, Y — coordinates of the first pixel of the very first digit<br>
