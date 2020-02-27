@@ -27,13 +27,13 @@ ts := 0.0, j = 1
 #IfWinActive ahk_exe GuitarPro7.exe
   loop {
     `::
-      ImageSearch DX, DY, X, Y, X+W, Y+H, %dir%\point.png
-      ImageSearch CX, CY, X, Y, X+W, Y+H, %dir%\colon.png
+      ImageSearch PX, , X, Y, X+W, Y+H, %dir%\point.png
+      ImageSearch CX, , X, Y, X+W, Y+H, %dir%\colon.png
 
       if ErrorLevel
         ExitApp
 
-      res := N(X) (DX = X+D+1 ? ("." (CX = X+D+5+D+1 ? N(X+D+5) : (CX = X+D+5+D+2+D+1 ? (N(X+D+5) N(X+D+5+D+2)) : (N(X+D+5) N(X+D+5+D+2) N(X+D+5+D+2+D+2))))) : (DX = X+D+2+D+1 ? (N(X+D+2) "." N(X+D+2+D+5) (CX = X+D+5+D+2+D+1 ?: N(X+D+2+D+5+D+2))) : (N(X+D+2) N(X+D+2+D+2) "." N(X+D+2+D+2+D+5))))
+      res := N(X) (PX = X+D+1 ? ("." (CX = X+D+5+D+1 ? N(X+D+5) : (CX = X+D+5+D+2+D+1 ? (N(X+D+5) N(X+D+5+D+2)) : (N(X+D+5) N(X+D+5+D+2) N(X+D+5+D+2+D+2))))) : (PX = X+D+2+D+1 ? (N(X+D+2) "." N(X+D+2+D+5) (CX = X+D+5+D+2+D+1 ?: N(X+D+2+D+5+D+2))) : (N(X+D+2) N(X+D+2+D+2) "." N(X+D+2+D+2+D+5))))
 
       if !res
         continue
@@ -69,6 +69,7 @@ ts := 0.0, j = 1
   }
 
   ; additional hotkeys for editing and transposing
+  /*
   Z::send {CtrlDown}z{CtrlUp}
   X::send {CtrlDown}x{CtrlUp}
   C::send {CtrlDown}c{CtrlUp}
@@ -79,4 +80,5 @@ ts := 0.0, j = 1
   Numpad2::send {AltDown}{ShiftDown}{Down}{ShiftUp}{AltUp}
   Numpad7::send {AltDown}{Up}{AltUp}
   Numpad1::send {AltDown}{Down}{AltUp}
+  */
 #IfWinActive
