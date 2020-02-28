@@ -1,4 +1,4 @@
-X := 592, Y = 69, D = 4, H = 8, P = 5, C = 2, S = 2
+X := 592, Y = 69, D = 4, H = 8, P = 5, C = 2, S = 2, E = 1
 dir = digits
 
 #SingleInstance Force
@@ -23,7 +23,7 @@ _sigs := [[17.8], [9.4, 18.8], [19.8], [10.4, 5.2, 20.8], [21.8], [11.4, 22.8], 
 
 sigs.push(_sigs*)
 
-MW := D*4 + P + C + S*2 + 1
+MW := D*4 + P + C + S*2 + E
 ts := 0.0, j = 1
 
 #IfWinActive ahk_exe GuitarPro7.exe
@@ -35,7 +35,7 @@ ts := 0.0, j = 1
       if ErrorLevel
         ExitApp
 
-      res := N(X) (PX = X+D+1 ? ("." (CX = X+D+P+D+1 ? N(X+D+P) : (CX = X+D+P+D+S+D+1 ? (N(X+D+P) N(X+D+P+D+S)) : (N(X+D+P) N(X+D+P+D+S) N(X+D+P+D+S+D+S))))) : (PX = X+D+S+D+1 ? (N(X+D+S) "." N(X+D+S+D+P) (CX = X+D+P+D+S+D+1 ?: N(X+D+S+D+P+D+S))) : (N(X+D+S) N(X+D+S+D+S) "." N(X+D+S+D+S+D+P))))
+      res := N(X) (PX = X+D+E ? ("." (CX = X+D+P+D+E ? N(X+D+P) : (CX = X+D+P+D+S+D+E ? (N(X+D+P) N(X+D+P+D+S)) : (N(X+D+P) N(X+D+P+D+S) N(X+D+P+D+S+D+S))))) : (PX = X+D+S+D+E ? (N(X+D+S) "." N(X+D+S+D+P) (CX = X+D+P+D+S+D+E ?: N(X+D+S+D+P+D+S))) : (N(X+D+S) N(X+D+S+D+S) "." N(X+D+S+D+S+D+P))))
 
       if !res
         continue
