@@ -1,4 +1,5 @@
-X := 592, Y = 69, W = 28, H = 8, D = 4, dir = "digits"
+X := 592, Y = 69, D = 4, H = 8, P = 5, C = 2, S = 2
+dir = digits
 
 #SingleInstance Force
 CoordMode Pixel, Screen
@@ -22,18 +23,19 @@ _sigs := [[17.8], [9.4, 18.8], [19.8], [10.4, 5.2, 20.8], [21.8], [11.4, 22.8], 
 
 sigs.push(_sigs*)
 
+MW := D*4 + P + C + (S*2) + 1
 ts := 0.0, j = 1
 
 #IfWinActive ahk_exe GuitarPro7.exe
   loop {
     `::
-      ImageSearch PX, , X, Y, X+W, Y+H, %dir%\point.png
-      ImageSearch CX, , X, Y, X+W, Y+H, %dir%\colon.png
+      ImageSearch PX, , X, Y, X+MW, Y+H, %dir%\point.png
+      ImageSearch CX, , X, Y, X+MW, Y+H, %dir%\colon.png
 
       if ErrorLevel
         ExitApp
 
-      res := N(X) (PX = X+D+1 ? ("." (CX = X+D+5+D+1 ? N(X+D+5) : (CX = X+D+5+D+2+D+1 ? (N(X+D+5) N(X+D+5+D+2)) : (N(X+D+5) N(X+D+5+D+2) N(X+D+5+D+2+D+2))))) : (PX = X+D+2+D+1 ? (N(X+D+2) "." N(X+D+2+D+5) (CX = X+D+5+D+2+D+1 ?: N(X+D+2+D+5+D+2))) : (N(X+D+2) N(X+D+2+D+2) "." N(X+D+2+D+2+D+5))))
+      res := N(X) (PX = X+D+1 ? ("." (CX = X+D+P+D+1 ? N(X+D+P) : (CX = X+D+P+D+S+D+1 ? (N(X+D+P) N(X+D+P+D+S)) : (N(X+D+P) N(X+D+P+D+S) N(X+D+P+D+S+D+S))))) : (PX = X+D+S+D+1 ? (N(X+D+S) "." N(X+D+S+D+P) (CX = X+D+P+D+S+D+1 ?: N(X+D+S+D+P+D+S))) : (N(X+D+S) N(X+D+S+D+S) "." N(X+D+S+D+S+D+P))))
 
       if !res
         continue
