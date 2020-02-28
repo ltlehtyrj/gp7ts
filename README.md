@@ -9,4 +9,5 @@ H — height of a digit (8, or 10 at 125% scaling)<br>
 P — point area width (5)<br>
 C — colon width (2)<br>
 S — space between two digits (2)<br>
+E — extra space (1)<br>
 dir — digits folder<br>
