@@ -35,7 +35,7 @@ ts := 0.0, j = 1
       if ErrorLevel
         ExitApp
 
-      res := N(X) (PX = X+D+E ? ("." (CX = X+D+P+D+E ? N(X+D+P) : (CX = X+D+P+D+S+D+E ? (N(X+D+P) N(X+D+P+D+S)) : (N(X+D+P) N(X+D+P+D+S) N(X+D+P+D+S+D+S))))) : (PX = X+D+S+D+E ? (N(X+D+S) "." N(X+D+S+D+P) (CX = X+D+P+D+S+D+E ?: N(X+D+S+D+P+D+S))) : (N(X+D+S) N(X+D+S+D+S) "." N(X+D+S+D+S+D+P))))
+      res := N(X) (PX = X+D+E ? ("." (CX = X+D+P+D+E ? N(X+D+P) : (CX = X+D+P+D+S+D+E ? (N(X+D+P) N(X+D+P+D+S)) : (N(X+D+P) N(X+D+P+D+S) N(X+D+P+D+S+D+S))))) : (PX = X+D+S+D+E ? (N(X+D+S) "." N(X+D+S+D+P) (CX = X+D+P+D+S+D+E ? "" : N(X+D+S+D+P+D+S))) : (N(X+D+S) N(X+D+S+D+S) "." N(X+D+S+D+S+D+P))))
 
       if !res
         continue
