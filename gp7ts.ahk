@@ -1,5 +1,5 @@
 X := 592, Y = 69, D = 4, H = 8, P = 5, C = 2, S = 2, E = 1
-dir = digits
+dir = %A_ScriptDir%\digits
 
 #SingleInstance Force
 CoordMode Pixel, Screen
