@@ -4,7 +4,7 @@ The script updates the current measure's time signature in Guitar Pro 7, by pres
 
 ![example](https://raw.githubusercontent.com/ltlehtyrj/gp7ts/master/example.gif)
 
-To get it work, install [AutoHotkey](http://autohotkey.com) first. Then save the point, the colon and all digits from 0 to 9 in PNG (see examples). Finally, set the variables:
+To get it work, install [AutoHotkey](http://autohotkey.com) first. Then save the point, the colon and all digits from 0 to 9 in PNG (see examples), set the variables in the first line of the script, then finally run it.
 
 X, Y — coordinates of the first pixel of the very first digit<br>
 D — width of a digit (4, or 6 at 125% scaling)<br>
