@@ -5,7 +5,7 @@ dir = %A_ScriptDir%\digits
 CoordMode Pixel, Screen
 
 N(IX) {
-  global Y, H, D, dir
+  global Y, D, H, dir
   n := 0
   loop {
     ImageSearch, , , IX, Y, IX+D, Y+H, %dir%\%n%.png
@@ -33,7 +33,7 @@ ts := 0.0, j = 1
       ImageSearch CX, , X, Y, X+MW, Y+H, %dir%\colon.png
 
       if ErrorLevel
-        ExitApp
+        continue
 
       res := N(X) (PX = X+D+E ? ("." (CX = X+D+P+D+E ? N(X+D+P) : (CX = X+D+P+D+S+D+E ? (N(X+D+P) N(X+D+P+D+S)) : (N(X+D+P) N(X+D+P+D+S) N(X+D+P+D+S+D+S))))) : (PX = X+D+S+D+E ? (N(X+D+S) "." N(X+D+S+D+P) (CX = X+D+P+D+S+D+E ? "" : N(X+D+S+D+P+D+S))) : (N(X+D+S) N(X+D+S+D+S) "." N(X+D+S+D+S+D+P))))
 
@@ -48,7 +48,7 @@ ts := 0.0, j = 1
             continue
           if tts[i] > res
             break
-          (ts = tts[i]) ? (sigs[i][++j] ?: j := 1) : j := 1
+          (ts = tts[i]) ? (sigs[i][++j] or j := 1) : j := 1
           break
         }
         ts := tts[i]
