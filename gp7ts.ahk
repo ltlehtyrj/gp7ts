@@ -24,7 +24,7 @@ _sigs := [[17.8], [9.4, 18.8], [19.8], [10.4, 5.2, 20.8], [21.8], [11.4, 22.8], 
 sigs.push(_sigs*)
 
 MW := D*4 + P + C + S*2 + E
-ts := 0.0, j = 1
+ts := 0.0
 
 #IfWinActive ahk_exe GuitarPro7.exe
   loop {
