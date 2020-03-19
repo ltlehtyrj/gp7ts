@@ -61,18 +61,4 @@ MW := D*4 + P + C + S*2 + E
       send %bn%{Enter}
     return
   }
-
-  ; additional hotkeys for editing and transposing
-  /*
-  Z::send {CtrlDown}z{CtrlUp}
-  X::send {CtrlDown}x{CtrlUp}
-  C::send {CtrlDown}c{CtrlUp}
-  V::send {CtrlDown}v{CtrlUp}
-  T::send {CtrlDown}t{CtrlUp}
-  Y::send {CtrlDown}y{CtrlUp}
-  Numpad8::send {AltDown}{ShiftDown}{Up}{ShiftUp}{AltUp}
-  Numpad2::send {AltDown}{ShiftDown}{Down}{ShiftUp}{AltUp}
-  Numpad7::send {AltDown}{Up}{AltUp}
-  Numpad1::send {AltDown}{Down}{AltUp}
-  */
 #IfWinActive
