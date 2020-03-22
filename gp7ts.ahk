@@ -48,16 +48,12 @@ MW := D*4 + P + C + S*2 + E
 
       nums := strsplit(sigs[i][j], "."), tn = nums[1], bn = nums[2]
 
-      send {CtrlDown}{t}{CtrlUp}{Tab 8}
+      send {CtrlDown}{t}{CtrlUp}{Tab 8}{Home}
       if tn[1] <= 2
         send {End}
-      else
-        send {Home}
-      send %tn%{Tab}
+      send %tn%{Tab}{End}
       if bn[1] = 3
         send {Home}
-      else
-        send {End}
       send %bn%{Enter}
     return
   }
