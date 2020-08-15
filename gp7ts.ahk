@@ -8,7 +8,7 @@ N(IX) {
   global Y, D, H, dir
   n := 0
   loop {
-    ImageSearch, , , IX, Y, IX+D, Y+H, %dir%\%n%.png
+    ImageSearch,,, IX, Y, IX+D, Y+H, %dir%\%n%.png
     if !ErrorLevel
       return n
     n++
@@ -28,8 +28,8 @@ MW := D*4 + P + C + S*2 + E
 #IfWinActive ahk_exe GuitarPro7.exe
   loop {
     `::
-      ImageSearch PX, , X, Y, X+MW, Y+H, %dir%\point.png
-      ImageSearch CX, , X, Y, X+MW, Y+H, %dir%\colon.png
+      ImageSearch PX,, X, Y, X+MW, Y+H, %dir%\point.png
+      ImageSearch CX,, X, Y, X+MW, Y+H, %dir%\colon.png
 
       if ErrorLevel
         continue
@@ -43,7 +43,7 @@ MW := D*4 + P + C + S*2 + E
       while bc[++i] < res
         continue
 
-      (ts = bc[i]) ? (sigs[i][++j] or j := 1) : j := 1
+      (ts = bc[i] and sigs[i][++j]) or j := 1
       ts := bc[i]
 
       nums := strsplit(sigs[i][j], "."), tn = nums[1], bn = nums[2]
