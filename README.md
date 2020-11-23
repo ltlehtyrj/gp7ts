@@ -2,7 +2,7 @@
 
 The script updates the current measure's time signature in Guitar Pro 7, by pressing the grave accent key (\`).<br>
 
-![example](https://raw.githubusercontent.com/ltlehtyrj/gp7ts/master/example.gif)
+![usage](https://raw.githubusercontent.com/ltlehtyrj/gp7ts/master/usage.png)
 
 To get it work, install [AutoHotkey](http://autohotkey.com) first. Then save the point, the colon and all digits from 0 to 9 in PNG (see examples), set the variables in the first line of the script, then finally run it.
 
